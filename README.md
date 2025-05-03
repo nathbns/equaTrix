@@ -2,15 +2,7 @@
 
 ## Informations du projet
 
-### Équipe
-- BARSAN Robert (p2305075)
-- BEN SOUSSAN Nathan (p2300345)
-- LAUTIN Renan (p2303036)
-
 ### Projet
-- **Identifiant Forge**: https://forge.univ-lyon1.fr/p2300345/equaTrix
-- **Module**: LIFAPCD 2024-2025
-- **Tuteur**: LOUVET Nicolas
 
 ## Description
 EquaTrix est une application mathématique multiplateforme permettant de manipuler des matrices, résoudre des systèmes d'équations linéaires, intégrer des fonctions et analyser des fonctions mathématiques.
