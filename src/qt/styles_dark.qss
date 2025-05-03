@@ -1,0 +1,291 @@
+/* Styles pour equaTrix - Mode Sombre */
+
+/* Fenêtre principale */
+QMainWindow {
+    background-color: #1e1e1e;
+}
+
+/* Style pour les popups de message */
+QMessageBox {
+    color: white;
+}
+
+QMessageBox QLabel {
+    color: white;
+}
+
+QMessageBox QPushButton {
+    background-color: #2d2d2d;
+    color: white;
+    border: 1px solid #555555;
+    border-radius: 3px;
+    padding: 4px 8px;
+    min-width: 80px;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #3d3d3d;
+}
+
+/* Onglets */
+QTabWidget::pane {
+    border: none;
+    background-color: #2d2d2d;
+    padding: 10px;
+}
+
+QTabBar::tab {
+    background-color: #2d2d2d;
+    color: white;
+    border: 1px solid #555555;
+    padding: 8px 20px;
+    font-weight: bold;
+}
+
+QTabBar::tab:selected {
+    background-color: #0d47a1;
+    color: white;
+}
+
+/* GroupBox */
+QGroupBox {
+    background-color: #2d2d2d;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    margin-top: 1.5ex;
+    padding-top: 1.5ex;
+    padding-bottom: 0.8ex;
+    padding-left: 0.8ex;
+    padding-right: 0.8ex;
+    font-weight: bold;
+    color: white;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 5px;
+    margin-left: 5px;
+    color: white;
+}
+
+/* Résultat et historique */
+QGroupBox#resultGroup, QGroupBox#historyGroup {
+    background-color: #2d2d2d;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+/* Scrollarea pour les résultats */
+QGroupBox#resultGroup QScrollArea {
+    background-color: black;
+}
+
+QGroupBox#resultGroup QScrollArea > QWidget > QWidget {
+    background-color: black;
+}
+
+/* Boutons */
+QPushButton {
+    background-color: #3d3d3d;
+    border: 1px solid #555555;
+    border-radius: 3px;
+    padding: 4px 8px;
+    color: white;
+    min-height: 22px;
+    margin: 2px;
+}
+
+QPushButton:hover {
+    background-color: #4d4d4d;
+}
+
+QPushButton:pressed {
+    background-color: #5d5d5d;
+}
+
+QPushButton[class="action"] {
+    background-color: #0d47a1;
+    color: white;
+    font-weight: bold;
+}
+
+/* Tableaux */
+QTableWidget {
+    border: 1px solid #555555;
+    background-color: #1e1e1e;
+    gridline-color: #444444;
+    selection-background-color: #0d47a1;
+    selection-color: white;
+}
+
+QTableWidget::item {
+    padding: 2px;
+    color: white;
+}
+
+/* En-têtes de tableaux */
+QHeaderView {
+    background-color: #0d47a1;
+    border: none;
+}
+
+QHeaderView::section {
+    background-color: #0d47a1;
+    color: white;
+    padding: 4px;
+    margin: 1px;
+    font-weight: bold;
+}
+
+QTableCornerButton::section {
+    background-color: #0d47a1;
+}
+
+/* Style pour les en-têtes de lignes du tableau */
+QHeaderView::section:vertical {
+    background-color: #0d47a1;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+}
+
+/* Style pour les en-têtes de colonnes du tableau */
+QHeaderView::section:horizontal {
+    background-color: #0d47a1;
+    color: white;
+    font-weight: bold;
+    height: 25px;
+}
+
+/* Texte et listes */
+QLabel {
+    background-color: transparent;
+    color: white;
+    padding: 2px;
+    margin: 0px;
+    min-height: 18px;
+    qproperty-wordWrap: true;
+}
+
+QSpinBox {
+    background-color: #1e1e1e;
+    border: 1px solid #555555;
+    padding: 2px;
+    margin: 1px;
+    min-height: 20px;
+    min-width: 40px;
+    color: white;
+}
+
+QLineEdit {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #555555;
+    padding: 2px 4px;
+    margin: 1px;
+    min-height: 20px;
+    min-width: 40px;
+}
+
+QTextEdit, QListWidget {
+    border: 1px solid #555555;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 2px;
+}
+
+QComboBox {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #555555;
+    padding: 2px 4px;
+    min-height: 20px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+QCheckBox {
+    color: white;
+}
+
+/* Style spécifique pour l'onglet système */
+#systemTab QLineEdit {
+    margin: 1px 2px;
+    padding: 2px 4px;
+}
+
+#systemTab QLabel {
+    margin: 1px 0px;
+    padding: 2px 2px;
+    min-width: 50px;
+}
+
+/* Style spécifique pour les onglets matrices */
+#matrixTab QTableWidget::item {
+    color: white; 
+    background-color: #1e1e1e;
+}
+
+/* Style spécifique pour les cellules éditables */
+QTableWidget QTableWidgetItem {
+    color: white;
+}
+
+/* Layout spécifiques */
+QHBoxLayout, QVBoxLayout, QGridLayout {
+    padding: 2px;
+    spacing: 5px;
+    margin: 2px;
+} 
+
+/* AJOUTES MANUELLEMENT POUR L'ONGLET MATRICES */
+QSpinBox::up-button {
+    min-width: 20px;
+    min-height: 10px;
+}
+
+QSpinBox::down-button {
+    min-width: 20px;
+    min-height: 10px;
+}
+
+QTableWidget::item {
+    min-width: 50px;
+    min-height: 50px;
+}
+
+/* Scrollbar */
+QScrollBar:vertical {
+    background: #1e1e1e;
+    width: 12px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #2d2d2d;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    background: #1e1e1e;
+    height: 12px;
+    margin: 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #2d2d2d;
+    min-width: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+} 

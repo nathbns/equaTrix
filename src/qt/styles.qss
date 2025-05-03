@@ -1,0 +1,238 @@
+/* Styles pour equaTrix */
+
+/* Fenêtre principale */
+QMainWindow {
+    background-color:rgb(255, 255, 255);
+}
+
+QMessageBox QLabel {
+    color: black;
+}
+
+/* Style pour les popups de message */
+QMessageBox {
+    color: black;
+}
+
+QDialog {
+    color: white;
+}
+
+QDialog QLabel {
+    color: white;
+}
+
+
+/* Onglets */
+QTabWidget::pane {
+    border: none;
+    background-color #abd5f5;
+    padding: 10px;
+}
+
+QTabBar::tab {
+    background-color: #abd5f5;
+    color: black;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 8px 20px;
+    font-weight: bold;
+}
+
+QTabBar::tab:selected {
+    background-color: #4a86e8;
+    color: white;
+}
+
+/* GroupBox */
+QGroupBox {
+    background-color: #abd5f5;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    margin-top: 1.5ex;
+    padding-top: 1.5ex;
+    padding-bottom: 0.8ex;
+    padding-left: 0.8ex;
+    padding-right: 0.8ex;
+    font-weight: bold;
+    color: black;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 5px;
+    margin-left: 5px;
+    color: black;
+}
+
+/* Résultat et historique */
+QGroupBox#resultGroup, QGroupBox#historyGroup {
+    background-color: #abd5f5;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+/* Scrollarea pour les résultats */
+QGroupBox#resultGroup QScrollArea {
+    background-color: white;
+}
+
+QGroupBox#resultGroup QScrollArea > QWidget > QWidget {
+    background-color: white;
+}
+
+/* Boutons */
+QPushButton {
+    background-color: #f0f0f0;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    padding: 4px 8px;
+    color: black;
+    min-height: 22px;
+    margin: 2px;
+}
+
+QPushButton:hover {
+    background-color: #e0e0e0;
+}
+
+QPushButton:pressed {
+    background-color: #d0d0d0;
+}
+
+QPushButton[class="action"] {
+    background-color: #4a86e8;
+    color: white;
+    font-weight: bold;
+}
+
+/* Tableaux */
+QTableWidget {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: white;
+    gridline-color: #e0e0e0;
+    selection-background-color: #4a86e8;
+    selection-color: white;
+}
+
+QTableWidget::item {
+    padding: 2px;
+    color: black;
+}
+
+/* En-têtes de tableaux */
+QHeaderView {
+    background-color: #4a86e8;
+    border: none;
+}
+
+QHeaderView::section {
+    background-color: #4a86e8;
+    color: white;
+    padding: 4px;
+    margin: 1px;
+    font-weight: bold;
+}
+
+QTableCornerButton::section {
+    background-color: #4a86e8;
+}
+
+/* Style pour les en-têtes de lignes du tableau (selon la maquette) */
+QHeaderView::section:vertical {
+    background-color: #4a86e8;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+}
+
+/* Style pour les en-têtes de colonnes du tableau (selon la maquette) */
+QHeaderView::section:horizontal {
+    background-color: #4a86e8;
+    color: white;
+    font-weight: bold;
+    height: 25px;
+}
+
+/* Texte et listes */
+QLabel {
+    background-color: transparent;
+    color: black;
+    padding: 2px;
+    margin: 0px;
+    min-height: 18px;
+    qproperty-wordWrap: true;
+}
+
+QSpinBox {
+    background-color: white;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 2px;
+    margin: 1px;
+    min-height: 20px;
+    min-width: 40px;
+    color: black;
+}
+
+QLineEdit {
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 2px 4px;
+    margin: 1px;
+    min-height: 20px;
+    min-width: 40px;
+}
+
+QTextEdit, QListWidget {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: white;
+    color: black;
+    padding: 2px;
+}
+
+/* Style spécifique pour l'onglet système */
+#systemTab QLineEdit {
+    margin: 1px 2px;
+    padding: 2px 4px;
+}
+
+#systemTab QLabel {
+    margin: 1px 0px;
+    padding: 2px 2px;
+    min-width: 50px;
+}
+
+/* Style spécifique pour les onglets matrices */
+#matrixTab QTableWidget::item {
+    color: black; 
+    background-color: white;
+}
+
+/* Style spécifique pour les cellules éditables */
+QTableWidget QTableWidgetItem {
+    color: black;
+}
+
+/* Layout spécifiques */
+QHBoxLayout, QVBoxLayout, QGridLayout {
+    padding: 2px;
+    spacing: 5px;
+    margin: 2px;
+} 
+
+/* AJOUTES MANUELLEMENT POUR L'ONGLET MATRICES */
+
+QSpinBox::up-button {
+    min-width: 20px;
+    min-height: 10px;
+}
+
+QSpinBox::down-button {
+    min-width: 20px;
+    min-height: 10px;
+}
+
+QTableWidget::item {
+    min-width: 50px;
+    min-height: 50px;
+}
