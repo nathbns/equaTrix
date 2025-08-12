@@ -1,0 +1,12 @@
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/antlr4_runtime.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/EquaTrix_qt.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/edit_cache.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/rebuild_cache.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/list_install_components.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/install.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/install/local.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/install/strip.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/antlr4_runtime_autogen_timestamp_deps.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/antlr4_runtime_autogen.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/EquaTrix_qt_autogen_timestamp_deps.dir
+/Users/nath/Desktop/equaTrix/build/CMakeFiles/EquaTrix_qt_autogen.dir

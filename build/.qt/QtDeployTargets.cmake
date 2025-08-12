@@ -1,0 +1,4 @@
+set(__QT_DEPLOY_TARGET_antlr4_runtime_FILE /Users/nath/Desktop/equaTrix/build/libantlr4_runtime.a)
+set(__QT_DEPLOY_TARGET_antlr4_runtime_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_EquaTrix_qt_FILE /Users/nath/Desktop/equaTrix/build/EquaTrix_qt.app/Contents/MacOS/EquaTrix_qt)
+set(__QT_DEPLOY_TARGET_EquaTrix_qt_TYPE EXECUTABLE)

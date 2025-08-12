@@ -84,12 +84,12 @@ void MainWindow::setupMatrixTab(){
     QHBoxLayout *matricesLayout = new QHBoxLayout();
     
     // Matrix A section
-    QGroupBox *matrixAGroup = new QGroupBox("Matrice A :");
+    QGroupBox *matrixAGroup = new QGroupBox("Matrix A:");
     QVBoxLayout *matrixALayout = new QVBoxLayout(matrixAGroup);
     
     // Matrix A size controls
     QHBoxLayout *matrixASizeLayout = new QHBoxLayout();
-    QLabel *matrixASizeLabel = new QLabel("Taille :");
+    QLabel *matrixASizeLabel = new QLabel("Size:");
     matrixARowsSpinBox = new QSpinBox();
     matrixARowsSpinBox->setRange(2, 6);
     matrixARowsSpinBox->setValue(3);
@@ -120,19 +120,19 @@ void MainWindow::setupMatrixTab(){
     matrixALayout->addWidget(matrixATable);
     
     // Matrix A operations
-    QGroupBox *matrixAOpsGroup = new QGroupBox("Calcul sur A :");
+    QGroupBox *matrixAOpsGroup = new QGroupBox("Operations on A:");
     QGridLayout *matrixAOpsLayout = new QGridLayout(matrixAOpsGroup);
     
-    determinantAButton = new QPushButton("Déterminant");
-    transposeAButton = new QPushButton("Transposé");
+    determinantAButton = new QPushButton("Determinant");
+    transposeAButton = new QPushButton("Transpose");
     inverseAButton = new QPushButton("Inverse");
-    rankAButton = new QPushButton("Rang");
+    rankAButton = new QPushButton("Rank");
     kerAButton = new QPushButton("Ker(A)");
     imAButton = new QPushButton("Im(A)");
     trAButton = new QPushButton("tr(A)");
-    powAButton = new QPushButton("Puissances de A");
+    powAButton = new QPushButton("Powers of A");
     eigenValAButton = new QPushButton("Spec(A)");
-    vectAButton = new QPushButton("Vecteurs propres");
+    vectAButton = new QPushButton("Eigenvectors");
     
     matrixAOpsLayout->addWidget(determinantAButton, 0, 0);
     matrixAOpsLayout->addWidget(transposeAButton, 1, 0);
@@ -149,12 +149,12 @@ void MainWindow::setupMatrixTab(){
     matrixALayout->addWidget(matrixAOpsGroup);
     
     // Matrix B section
-    QGroupBox *matrixBGroup = new QGroupBox("Matrice B :");
+    QGroupBox *matrixBGroup = new QGroupBox("Matrix B:");
     QVBoxLayout *matrixBLayout = new QVBoxLayout(matrixBGroup); 
     
     // Matrix B size controls
     QHBoxLayout *matrixBSizeLayout = new QHBoxLayout();
-    QLabel *matrixBSizeLabel = new QLabel("Taille :");
+    QLabel *matrixBSizeLabel = new QLabel("Size:");
     matrixBRowsSpinBox = new QSpinBox();
     matrixBRowsSpinBox->setRange(2, 6);
     matrixBRowsSpinBox->setValue(3);
@@ -185,19 +185,19 @@ void MainWindow::setupMatrixTab(){
     matrixBLayout->addWidget(matrixBTable);
     
     // Matrix B operations
-    QGroupBox *matrixBOpsGroup = new QGroupBox("Calcul sur B :");
+    QGroupBox *matrixBOpsGroup = new QGroupBox("Operations on B:");
     QGridLayout *matrixBOpsLayout = new QGridLayout(matrixBOpsGroup);
     
-    determinantBButton = new QPushButton("Déterminant");
-    transposeBButton = new QPushButton("Transposé");
+    determinantBButton = new QPushButton("Determinant");
+    transposeBButton = new QPushButton("Transpose");
     inverseBButton = new QPushButton("Inverse");
-    rankBButton = new QPushButton("Rang");
+    rankBButton = new QPushButton("Rank");
     kerBButton = new QPushButton("Ker(B)");
     imBButton = new QPushButton("Im(B)");
     trBButton = new QPushButton("tr(B)");
-    powBButton = new QPushButton("Puissances de B");
+    powBButton = new QPushButton("Powers of B");
     eigenValBButton = new QPushButton("Spec(B)");
-    vectBButton = new QPushButton("Vecteurs propres");
+    vectBButton = new QPushButton("Eigenvectors");
     
     matrixBOpsLayout->addWidget(determinantBButton, 0, 0);
     matrixBOpsLayout->addWidget(inverseBButton, 1, 0);
@@ -213,7 +213,7 @@ void MainWindow::setupMatrixTab(){
     matrixBLayout->addWidget(matrixBOpsGroup);
     
     // Operations between A and B
-    QGroupBox *matrixOpsGroup = new QGroupBox("Calcul sur A et B :");
+    QGroupBox *matrixOpsGroup = new QGroupBox("Operations on A and B:");
     QVBoxLayout *matrixOpsLayout = new QVBoxLayout(matrixOpsGroup);
     
     multiplyButton = new QPushButton("A * B");
@@ -232,7 +232,7 @@ void MainWindow::setupMatrixTab(){
     matricesLayout->addWidget(matrixBGroup);
 
     // Create history section
-    QGroupBox *historyGroup = new QGroupBox("Historique:");
+    QGroupBox *historyGroup = new QGroupBox("History:");
     historyGroup->setObjectName("historyGroup");
     QVBoxLayout *historyLayout = new QVBoxLayout(historyGroup);
     historyTextEdit = new QTextEdit();
@@ -240,11 +240,11 @@ void MainWindow::setupMatrixTab(){
     historyLayout->addWidget(historyTextEdit);
     
     // Add a button to clear history
-    clearHistoryButton = new QPushButton("Effacer l'historique");
+    clearHistoryButton = new QPushButton("Clear History");
     historyLayout->addWidget(clearHistoryButton);
     
     // Create result section
-    QGroupBox *resultGroup = new QGroupBox("Résultat :");
+    QGroupBox *resultGroup = new QGroupBox("Result:");
     resultGroup->setObjectName("resultGroup");
     QVBoxLayout *resultLayout = new QVBoxLayout(resultGroup);
     resultMatrixTable = new QTableWidget();
@@ -277,7 +277,7 @@ void MainWindow::setupMatrixTab(){
     mainLayout->addWidget(historyGroup);
     
     // Add tab to tab widget
-    tabWidget->addTab(matrixTab, "Matrice");
+    tabWidget->addTab(matrixTab, "Matrix");
     
     // Connect signals and slots for matrix resizing
     connect(matrixARowsSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::resizeMatrixA);
@@ -385,12 +385,12 @@ void MainWindow::setupIntegrationTab()
     // Function input
     QLabel *functionLabel = new QLabel("Fonction f(x):");
     integrationFunctionEdit = new QLineEdit();
-    integrationFunctionEdit->setPlaceholderText("Exemple: x^2 + 3*x + 2");
+    integrationFunctionEdit->setPlaceholderText("Example: x^2 + 3*x + 2");
     inputLayout->addWidget(functionLabel, 0, 0);
     inputLayout->addWidget(integrationFunctionEdit, 0, 1, 1, 3);
     
     // Bounds input
-    QLabel *boundsLabel = new QLabel("Bornes:");
+    QLabel *boundsLabel = new QLabel("Bounds:");
     QLabel *lowerBoundLabel = new QLabel("a ");
     integrationLowerBoundEdit = new QLineEdit();
     integrationLowerBoundEdit->setPlaceholderText("0");
@@ -405,7 +405,7 @@ void MainWindow::setupIntegrationTab()
     inputLayout->addWidget(integrationUpperBoundEdit, 1, 4);
     
     // Intervals input
-    QLabel *intervalsLabel = new QLabel("Nombre d'intervalles:");
+    QLabel *intervalsLabel = new QLabel("Number of intervals:");
     integrationIntervalsSpinBox = new QSpinBox();
     integrationIntervalsSpinBox->setRange(1, 1000);
     integrationIntervalsSpinBox->setValue(100);
@@ -414,19 +414,19 @@ void MainWindow::setupIntegrationTab()
     inputLayout->addWidget(integrationIntervalsSpinBox, 2, 1);
     
     // Calculate button
-    calculateIntegralButton = new QPushButton("Calculer l'intégrale");
+    calculateIntegralButton = new QPushButton("Calculate Integral");
     calculateIntegralButton->setProperty("class", "action");
     inputLayout->addWidget(calculateIntegralButton, 3, 0, 1, 5);
     
     // Result section
-    QGroupBox *resultGroup = new QGroupBox("Résultat:");
+    QGroupBox *resultGroup = new QGroupBox("Result:");
     resultGroup->setObjectName("resultGroup");
     QVBoxLayout *resultLayout = new QVBoxLayout(resultGroup);
-    integrationResultLabel = new QLabel("Aucun calcul effectué");
+    integrationResultLabel = new QLabel("No calculation performed");
     resultLayout->addWidget(integrationResultLabel);
     
     // History section
-    QGroupBox *historyGroup = new QGroupBox("Historique:");
+    QGroupBox *historyGroup = new QGroupBox("History:");
     historyGroup->setObjectName("historyGroup");
     QVBoxLayout *historyLayout = new QVBoxLayout(historyGroup);
     integrationHistoryList = new QListWidget();
@@ -441,13 +441,13 @@ void MainWindow::setupIntegrationTab()
     QVBoxLayout *graphsLayout = new QVBoxLayout();
     
     // First chart for rectangles method
-    QGroupBox *rectangleGroup = new QGroupBox("Méthode des rectangles:");
+    QGroupBox *rectangleGroup = new QGroupBox("Rectangle Method:");
     rectangleGroup->setObjectName("graphGroup");
     QVBoxLayout *rectangleLayout = new QVBoxLayout(rectangleGroup);
     
     // Initialize chart
     rectangleChart = new QChart();
-    rectangleChart->setTitle("Intégration par rectangles");
+    rectangleChart->setTitle("Integration by Rectangles");
     rectangleChart->legend()->setVisible(true);
     rectangleChart->legend()->setAlignment(Qt::AlignBottom);
     
@@ -469,13 +469,13 @@ void MainWindow::setupIntegrationTab()
     rectangleLayout->addWidget(rectangleChartView);
     
     // Second chart for trapezoid method
-    QGroupBox *trapezoidGroup = new QGroupBox("Méthode des trapèzes:");
+    QGroupBox *trapezoidGroup = new QGroupBox("Trapezoid Method:");
     trapezoidGroup->setObjectName("graphGroup");
     QVBoxLayout *trapezoidLayout = new QVBoxLayout(trapezoidGroup);
     
     // Initialize chart
     trapezoidChart = new QChart();
-    trapezoidChart->setTitle("Intégration par trapèzes");
+    trapezoidChart->setTitle("Integration by Trapezoids");
     trapezoidChart->legend()->setVisible(true);
     trapezoidChart->legend()->setAlignment(Qt::AlignBottom);
     
@@ -506,7 +506,7 @@ void MainWindow::setupIntegrationTab()
     splitLayout->setStretch(1, 2); // Right side (graph takes more space)
     
     // Add tab to tab widget
-    tabWidget->addTab(integrationTab, "Intégration");
+    tabWidget->addTab(integrationTab, "Integration");
     
     // Connect signal and slot
     connect(calculateIntegralButton, &QPushButton::clicked, this, &MainWindow::calculateIntegral);
@@ -518,17 +518,17 @@ void MainWindow::setupSystemTab(){
     QVBoxLayout *mainLayout = new QVBoxLayout(systemTab);
     
     // System input section
-    QGroupBox *inputGroup = new QGroupBox("Système d'équations linéaires:");
+    QGroupBox *inputGroup = new QGroupBox("Linear Equation System:");
     QVBoxLayout *inputLayout = new QVBoxLayout(inputGroup);
     
     // System size controls
     QHBoxLayout *sizeLayout = new QHBoxLayout();
-    QLabel *sizeLabel = new QLabel("Nombre d'équations:");
+    QLabel *sizeLabel = new QLabel("Number of equations:");
     systemSizeSpinBox = new QSpinBox();
     systemSizeSpinBox->setRange(1, 6);
     systemSizeSpinBox->setValue(3);
     
-    QLabel *varsLabel = new QLabel("Nombre d'inconnues:");
+    QLabel *varsLabel = new QLabel("Number of unknowns:");
     systemVarsSpinBox = new QSpinBox();
     systemVarsSpinBox->setRange(1, 6);
     systemVarsSpinBox->setValue(3);
@@ -571,15 +571,15 @@ void MainWindow::setupSystemTab(){
     }
     
     // Solve button
-    solveSystemButton = new QPushButton("Résoudre le système");
+    solveSystemButton = new QPushButton("Solve System");
     solveSystemButton->setProperty("class", "action");
     inputLayout->addWidget(solveSystemButton);
     
     // Result section
-    QGroupBox *resultGroup = new QGroupBox("Résultat:");
+    QGroupBox *resultGroup = new QGroupBox("Result:");
     resultGroup->setObjectName("resultGroup");
     QVBoxLayout *resultLayout = new QVBoxLayout(resultGroup);
-    systemResultLabel = new QLabel("Aucun calcul effectué");
+    systemResultLabel = new QLabel("No calculation performed");
     systemResultLabel->setTextFormat(Qt::RichText);
     systemResultLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     systemResultLabel->setWordWrap(true);
@@ -591,14 +591,14 @@ void MainWindow::setupSystemTab(){
     resultLayout->addWidget(scrollArea);
     
     // History section
-    QGroupBox *historyGroup = new QGroupBox("Historique:");
+    QGroupBox *historyGroup = new QGroupBox("History:");
     historyGroup->setObjectName("historyGroup");
     QVBoxLayout *historyLayout = new QVBoxLayout(historyGroup);
     systemHistoryList = new QListWidget();
     historyLayout->addWidget(systemHistoryList);
     
     // Clear history button
-    clearSystemHistoryButton = new QPushButton("Effacer l'historique");
+    clearSystemHistoryButton = new QPushButton("Clear History");
     historyLayout->addWidget(clearSystemHistoryButton);
     
     // Add all sections to main layout
@@ -607,7 +607,7 @@ void MainWindow::setupSystemTab(){
     mainLayout->addWidget(historyGroup);
     
     // Add tab to tab widget
-    tabWidget->addTab(systemTab, "Système");
+    tabWidget->addTab(systemTab, "System");
     
     // Connect signals and slots
     connect(systemSizeSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::resizeSystem);
@@ -621,7 +621,7 @@ void MainWindow::setupFunctionTab(){
     QVBoxLayout *mainLayout = new QVBoxLayout(functionTab);
     
     // Function input section
-    QGroupBox *inputGroup = new QGroupBox("Analyse de fonction:");
+    QGroupBox *inputGroup = new QGroupBox("Function Analysis:");
     QVBoxLayout *inputLayout = new QVBoxLayout(inputGroup);
     
     // Function input row
@@ -644,8 +644,8 @@ void MainWindow::setupFunctionTab(){
     
     // Analysis options
     QHBoxLayout *optionsLayout = new QHBoxLayout();
-    findDerivativeCheck = new QCheckBox("Dérivée");
-    findRootsCheck = new QCheckBox("Racines");
+    findDerivativeCheck = new QCheckBox("Derivative");
+    findRootsCheck = new QCheckBox("Roots");
     
     findDerivativeCheck->setChecked(false);
     findRootsCheck->setChecked(false);
@@ -655,12 +655,12 @@ void MainWindow::setupFunctionTab(){
     inputLayout->addLayout(optionsLayout);
     
     // Analyze button
-    analyzeButton = new QPushButton("Analyser la fonction");
+    analyzeButton = new QPushButton("Analyze Function");
     analyzeButton->setProperty("class", "action");
     inputLayout->addWidget(analyzeButton);
     
     // Result section
-    QGroupBox *resultGroup = new QGroupBox("Résultat:");
+    QGroupBox *resultGroup = new QGroupBox("Result:");
     resultGroup->setObjectName("resultGroup");
     QVBoxLayout *resultLayout = new QVBoxLayout(resultGroup);
     functionResultText = new QTextEdit();
@@ -668,14 +668,14 @@ void MainWindow::setupFunctionTab(){
     resultLayout->addWidget(functionResultText);
     
     // History section
-    QGroupBox *historyGroup = new QGroupBox("Historique:");
+    QGroupBox *historyGroup = new QGroupBox("History:");
     historyGroup->setObjectName("historyGroup");
     QVBoxLayout *historyLayout = new QVBoxLayout(historyGroup);
     functionHistoryList = new QListWidget();
     historyLayout->addWidget(functionHistoryList);
     
     // Add export button
-    QPushButton *exportButton = new QPushButton("Exporter l'analyse");
+    QPushButton *exportButton = new QPushButton("Export Analysis");
     exportButton->setProperty("class", "action");
     mainLayout->addWidget(exportButton);
     
@@ -685,7 +685,7 @@ void MainWindow::setupFunctionTab(){
     mainLayout->addWidget(historyGroup);
     
     // Add tab to tab widget
-    tabWidget->addTab(functionTab, "Fonction");
+    tabWidget->addTab(functionTab, "Function");
     
     // Connect signals and slots
     connect(analyzeButton, &QPushButton::clicked, this, &MainWindow::analyzeFunction);
@@ -697,7 +697,7 @@ void MainWindow::setupAnalysisTab() {
     QVBoxLayout *mainLayout = new QVBoxLayout(analysisTab);
     
     // Group to load data
-    QGroupBox *loadGroup = new QGroupBox("Charger des données:");
+    QGroupBox *loadGroup = new QGroupBox("Load Data:");
     QVBoxLayout *loadLayout = new QVBoxLayout(loadGroup);
     
     // Section for file type selection and upload button
@@ -706,7 +706,7 @@ void MainWindow::setupAnalysisTab() {
     fileTypeComboBox->addItem("CSV", "csv");
     fileTypeComboBox->addItem("JSON", "json");
     
-    loadFileButton = new QPushButton("Charger un fichier");
+    loadFileButton = new QPushButton("Load File");
     loadFileButton->setProperty("class", "action");
     
     fileLoadLayout->addWidget(fileTypeComboBox);
@@ -720,18 +720,18 @@ void MainWindow::setupAnalysisTab() {
     loadLayout->addWidget(dataTable);
     
     // Group for visualization
-    QGroupBox *visualGroup = new QGroupBox("Visualisation:");
+    QGroupBox *visualGroup = new QGroupBox("Visualization:");
     QVBoxLayout *visualLayout = new QVBoxLayout(visualGroup);
     
     // Button to generate the graph
-    visualizeButton = new QPushButton("Générer le graphique");
+    visualizeButton = new QPushButton("Generate Graph");
     visualizeButton->setProperty("class", "action");
     visualizeButton->setEnabled(false); // Disabled until data is loaded
     visualLayout->addWidget(visualizeButton);
     
     // Graph view
     chart = new QChart();
-    chart->setTitle("Analyse de fonction");
+    chart->setTitle("Function Analysis");
     chart->legend()->setVisible(true);
     chart->legend()->setAlignment(Qt::AlignBottom);
     
@@ -745,7 +745,7 @@ void MainWindow::setupAnalysisTab() {
     mainLayout->addWidget(visualGroup, 2);
     
     // Add the tab to the tab widget
-    tabWidget->addTab(analysisTab, "Analyse");
+    tabWidget->addTab(analysisTab, "Analysis");
     
     // Connect signals and slots
     connect(loadFileButton, &QPushButton::clicked, this, &MainWindow::loadDataFile);
@@ -754,7 +754,7 @@ void MainWindow::setupAnalysisTab() {
 
 void MainWindow::loadDataFile() {
     QString fileType = fileTypeComboBox->currentData().toString();
-    QString filter = fileType == "csv" ? "Fichiers CSV (*.csv)" : "Fichiers JSON (*.json)";
+    QString filter = fileType == "csv" ? "CSV Files (*.csv)" : "JSON Files (*.json)";
     
     QString fileName = QFileDialog::getOpenFileName(this,
         tr("Charger un fichier"), "",
@@ -786,7 +786,7 @@ void MainWindow::loadDataFile() {
         chart->removeAxis(axis);
         delete axis;
     }
-    chart->setTitle("Analyse des Données");
+    chart->setTitle("Data Analysis");
     
     if (fileType == "csv") {
         // Load CSV data
@@ -835,7 +835,7 @@ void MainWindow::loadDataFile() {
             
             // If this is the format exported by the export function
             if (jsonObj.contains("function")) {
-                dataHeaders << "Type" << "Expression" << "Valeur";
+                dataHeaders << "Type" << "Expression" << "Value";
                 dataTable->setColumnCount(3);
                 dataTable->setHorizontalHeaderLabels(dataHeaders);
                 
@@ -853,7 +853,7 @@ void MainWindow::loadDataFile() {
                 // Derivative
                 if (jsonObj.contains("derivative")) {
                     dataTable->setRowCount(row + 1);
-                    dataTable->setItem(row, 0, new QTableWidgetItem("Dérivée"));
+                    dataTable->setItem(row, 0, new QTableWidgetItem("Derivative"));
                     dataTable->setItem(row, 1, new QTableWidgetItem(jsonObj["derivative"].toString()));
                     dataTable->setItem(row, 2, new QTableWidgetItem(""));
                     QVector<double> derivativeData = {1, 0, 0}; // Dummy digital data
@@ -865,7 +865,7 @@ void MainWindow::loadDataFile() {
                 if (jsonObj.contains("evaluation")) {
                     QJsonObject evalObj = jsonObj["evaluation"].toObject();
                     dataTable->setRowCount(row + 1);
-                    dataTable->setItem(row, 0, new QTableWidgetItem(QString("Valeur en x=%1").arg(evalObj["x"].toDouble())));
+                    dataTable->setItem(row, 0, new QTableWidgetItem(QString("Value at x=%1").arg(evalObj["x"].toDouble())));
                     dataTable->setItem(row, 1, new QTableWidgetItem(""));
                     dataTable->setItem(row, 2, new QTableWidgetItem(QString::number(evalObj["value"].toDouble())));
                     QVector<double> evalData = {2, evalObj["x"].toDouble(), evalObj["value"].toDouble()};
@@ -914,7 +914,7 @@ void MainWindow::visualizeData() {
                     if (dataTable->item(i, 0)->text() == "Fonction") {
                         functionExpr = dataTable->item(i, 1)->text();
                     }
-                    else if (dataTable->item(i, 0)->text() == "Dérivée") {
+                    else if (dataTable->item(i, 0)->text() == "Derivative") {
                         derivativeExpr = dataTable->item(i, 1)->text();
                     }
                 }
@@ -996,7 +996,7 @@ void MainWindow::visualizeData() {
                             derivativeSeries->attachAxis(axisX);
                             derivativeSeries->attachAxis(axisY);
                         } catch (...) {
-                            qDebug() << "Erreur lors du tracé de la dérivée";
+                            qDebug() << "Error plotting the derivative";
                         }
                     }
                     
@@ -1025,7 +1025,7 @@ void MainWindow::visualizeData() {
                 }
             } catch (const std::exception& e) {
                 QMessageBox::warning(this, tr("Erreur"),
-                               tr("Erreur lors de l'analyse de la fonction: %1").arg(e.what()));
+                               tr("Error analyzing the function: %1").arg(e.what()));
             }
         } else {
             // For CSV data, check if the second column could be a derivative
@@ -1051,7 +1051,7 @@ void MainWindow::visualizeData() {
             QLineSeries *derivativeSeries = nullptr;
             if (hasDerivativeData) {
                 derivativeSeries = new QLineSeries();
-                derivativeSeries->setName(dataHeaders.size() > 2 ? dataHeaders[2] : "Dérivée");
+                derivativeSeries->setName(dataHeaders.size() > 2 ? dataHeaders[2] : "Derivative");
                 
                 // Set the derivative to orange color
                 QPen derivativePen = derivativeSeries->pen();
@@ -1107,9 +1107,9 @@ void MainWindow::visualizeData() {
                 axisX->setRange(minX - 0.5, maxX + 0.5);
                 axisY->setRange(minY - 1, maxY + 1);
                 axisX->setTitleText(dataHeaders.size() > 0 ? dataHeaders[0] : "X");
-                axisY->setTitleText("Valeur");
+                axisY->setTitleText("Value");
             } else {
-                // Set default values ​​if no valid data was found
+                // Set default values if no valid data was found
                 axisX->setRange(-10, 10);
                 axisY->setRange(-10, 10);
                 axisX->setTitleText("X");
@@ -1119,7 +1119,7 @@ void MainWindow::visualizeData() {
     }
     
     // Update the graph
-    chart->setTitle("Analyse des Données");
+    chart->setTitle("Data Analysis");
 }
 
 void MainWindow::exportFunctionAnalysis()
@@ -1211,7 +1211,7 @@ void MainWindow::exportFunctionAnalysis()
     
     file.close();
     
-    QMessageBox::information(this, tr("Succès"),
+    QMessageBox::information(this, tr("Success"),
                            tr("L'analyse a été exportée avec succès dans %1")
                            .arg(QDir::toNativeSeparators(fileName)));
 }
@@ -1476,21 +1476,21 @@ void MainWindow::calculateMatrixOperation()
     }
     
     // Display the contents of the matrices for debugging
-    QString debugMsg = "Matrice A:\n";
+    QString debugMsg = "Matrix A:\n";
     for (int i = 0; i < rowsA; ++i) {
         for (int j = 0; j < colsA; ++j) {
             debugMsg += QString::number(matrixA.getElem(i, j)) + " ";
         }
         debugMsg += "\n";
     }
-    debugMsg += "\nMatrice B:\n";
+    debugMsg += "\Matrix B:\n";
     for (int i = 0; i < rowsB; ++i) {
         for (int j = 0; j < colsB; ++j) {
             debugMsg += QString::number(matrixB.getElem(i, j)) + " ";
         }
         debugMsg += "\n";
     }
-    addToHistory("Matrices", debugMsg);
+    addToHistory("Matrix", debugMsg);
     
     // Perform the operation according to the button
 
@@ -1523,8 +1523,8 @@ void MainWindow::calculateMatrixOperation()
             operation = "A - B";
         } else if (button == compareButton) {
             bool equal = (matrixA == matrixB);
-            resultStr = equal ? "Les matrices sont égales" : "Les matrices sont différentes";
-            operation = "Comparaison A et B";
+            resultStr = equal ? "The matrices are equal" : "The matrices are different";
+            operation = "Compare A and B";
             showMatrix = false;
         }
         
@@ -1539,7 +1539,7 @@ void MainWindow::calculateMatrixOperation()
                 matrixResult.append(row);
             }
             displayResultMatrix(matrixResult);
-            addToHistory(operation, "Voir résultat ci-contre");
+            addToHistory(operation, "See result on the right");
         } else {
             addToHistory(operation, resultStr);
         }
@@ -1547,7 +1547,7 @@ void MainWindow::calculateMatrixOperation()
         
 
     } catch (const std::exception& e) {
-        QMessageBox::warning(this, "Erreur", QString("Une erreur s'est produite : %1").arg(e.what()));
+        QMessageBox::warning(this, "Error", QString("An error occurred: %1").arg(e.what()));
     }
 }
 
@@ -1663,7 +1663,7 @@ void MainWindow::calculateMatrixProperty()
                     return;
                 }
                 double det = matrixA.determinant();
-                operation = "Déterminant de A";
+                operation = "Determinant of A";
                 resultStr = QString::number(det);
             } else {
                 if (rowsB != colsB) {
@@ -1671,7 +1671,7 @@ void MainWindow::calculateMatrixProperty()
                     return;
                 }
                 double det = matrixB.determinant();
-                operation = "Déterminant de B";
+                operation = "Determinant of B";
                 resultStr = QString::number(det);
             }
 
@@ -1682,10 +1682,10 @@ void MainWindow::calculateMatrixProperty()
         } else if (button == transposeAButton || button == transposeBButton) {
             if (isMatrixA) {
                 resultMatrix = matrixA.transpose();
-                operation = "Transposée de A";
+                operation = "Transpose of A";
             } else {
                 resultMatrix = matrixB.transpose();
-                operation = "Transposée de B";
+                operation = "Transpose of B";
             }
             showMatrix = true;
 
@@ -1696,7 +1696,7 @@ void MainWindow::calculateMatrixProperty()
         } else if (button == inverseAButton || button == inverseBButton) {
             if (isMatrixA) {
                 if (rowsA != colsA) {
-                    QMessageBox::warning(this, "Erreur", "L'inverse n'est définie que pour les matrices carrées.");
+                    QMessageBox::warning(this, "Error", "The inverse is only defined for square matrices.");
                     return;
                 }
                 
@@ -1706,7 +1706,7 @@ void MainWindow::calculateMatrixProperty()
                 }
                 
                 resultMatrix = matrixA.getInverse();
-                operation = "Inverse de A";
+                operation = "Inverse of A";
             } else {
                 if (rowsB != colsB) {
                     QMessageBox::warning(this, "Erreur", "L'inverse n'est définie que pour les matrices carrées.");
@@ -1719,7 +1719,7 @@ void MainWindow::calculateMatrixProperty()
                 }
                 
                 resultMatrix = matrixB.getInverse();
-                operation = "Inverse de B";
+                operation = "Inverse of B";
             }
             showMatrix = true;
 
@@ -1731,13 +1731,13 @@ void MainWindow::calculateMatrixProperty()
             if (isMatrixA){
                 // Rank is not limited to square matrices
                 unsigned int rank = matrixA.rank();
-                operation = "Rang de A";
+                operation = "Rank of A";
                 resultStr = QString::number(rank);
             }
             else {
                 // Rank is not limited to square matrices
                 unsigned int rank = matrixB.rank();
-                operation = "Rang de B";
+                operation = "Rank of B";
                 resultStr = QString::number(rank);
             }   
 
@@ -1848,12 +1848,12 @@ void MainWindow::calculateMatrixProperty()
         } else if (button == trAButton || button == trBButton){
             if (isMatrixA){
                 double tr = matrixA.trace();
-                operation = "Trace de A";
+                operation = "Trace of A";
                 resultStr = QString::number(tr);
             }
             else {
                 double tr = matrixB.trace();
-                operation = "Trace de B";
+                operation = "Trace of B";
                 resultStr = QString::number(tr);
             }
 
@@ -1866,7 +1866,7 @@ void MainWindow::calculateMatrixProperty()
             dialog.setWindowTitle("Exposant de la matrice");
                 
             // Label
-            QLabel *label = new QLabel("Choisissez un exposant :", &dialog);
+            QLabel *label = new QLabel("Choose an exponent:", &dialog);
                 
             // SpinBox
             QSpinBox *newBox = new QSpinBox(&dialog);
@@ -1895,8 +1895,8 @@ void MainWindow::calculateMatrixProperty()
                     if (isMatrixA) resultMatrix = resultMatrix * matrixA;
                     else resultMatrix = resultMatrix * matrixB;
                 }
-                if (isMatrixA) operation = "Matrice A à la puissance " + QString::number(puissance);
-                else operation = "Matrice B à la puissance " + QString::number(puissance);
+                if (isMatrixA) operation = "Matrix A to the power " + QString::number(puissance);
+                else operation = "Matrix B to the power " + QString::number(puissance);
                 showMatrix = true;
             }
         
@@ -1907,11 +1907,11 @@ void MainWindow::calculateMatrixProperty()
             vector<complex<double>> res;
             if (isMatrixA){
                 res = matrixA.eigenvalues();
-                operation = "Spectre des valeurs propres de A";
+                operation = "Eigenvalues of A";
             }
             else {
                 res = matrixB.eigenvalues();
-                operation = "Spectre des valeurs propres de B";
+                operation = "Eigenvalues of B";
             }
             
             resultStr += "{ ";
@@ -1936,18 +1936,18 @@ void MainWindow::calculateMatrixProperty()
             std::ostringstream sRes;
             if (isMatrixA){
                 if (rowsA != colsA){
-                    QMessageBox::warning(this, "Erreur", "Seules les matrices carrées sont prises en charge.");
+                    QMessageBox::warning(this, "Error", "Only square matrices are supported.");
                     return;
                 }                
-                operation = "Vecteurs propres de A";
+                operation = "Eigenvectors of A";
                 eigRes = matrixA.eigenvectors();
             }
             else {
                 if (rowsB != colsB){
-                    QMessageBox::warning(this, "Erreur", "Seules les matrices carrées sont prises en charge.");
+                    QMessageBox::warning(this, "Error", "Only square matrices are supported.");
                     return;
                 }                
-                operation = "Vecteurs propres de B";
+                operation = "Eigenvectors of B";
                 eigRes = matrixB.eigenvectors();
             }
 
@@ -2152,7 +2152,7 @@ void MainWindow::updateIntegrationGraph(const Integral& rectangleIntegral, const
     // Create a series for the trapezes
     std::vector<std::pair<double, double>> trapezoidPoints = trapezoidIntegral.getTrapezoidPoints();
     QLineSeries *trapezoidSeries = new QLineSeries();
-    trapezoidSeries->setName("Trapèzes");
+    trapezoidSeries->setName("Trapezoids");
     
     // Style for trapezes
     QPen trapezoidPen(QColor(0, 0, 255, 150)); // Semi-transparent blue
@@ -2386,7 +2386,7 @@ void MainWindow::solveSystem(){
     // Add to history
     QString historyEntry = QString("Système %1x%2: ").arg(rows).arg(cols) + 
         (type == SystemSolver::SystemType::Unique ? "Solution unique" : 
-         type == SystemSolver::SystemType::InfinitelyManySolutions ? "Infinité de solutions" : 
+         type == SystemSolver::SystemType::InfinitelyManySolutions ? "Infinitely many solutions" : 
          "Pas de solution");
     systemHistoryList->addItem(historyEntry);
 }
@@ -2426,7 +2426,7 @@ void MainWindow::analyzeFunction()
         functionResultText->setText(result);
         
         // Add to history
-        functionHistoryList->addItem("Analyse de: " + expression);
+        functionHistoryList->addItem("Analysis of: " + expression);
     }
     catch (const std::exception& e) {
         QMessageBox::warning(this, "Erreur", 
@@ -2492,7 +2492,7 @@ void MainWindow::toggleDarkMode() {
             darkModeButton->setText("◑");
         }
     } else {
-        qDebug() << "Impossible de charger le fichier de style" << styleFileName;
+        qDebug() << "Unable to load style file" << styleFileName;
     }
 }
 

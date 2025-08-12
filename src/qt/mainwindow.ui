@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>CalculMatrice</string>
+   <string>EquaTrix</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -25,13 +25,13 @@
    </property>
    <widget class="QMenu" name="menuFichier">
     <property name="title">
-     <string>Fichier</string>
+     <string>File</string>
     </property>
     <addaction name="actionQuitter"/>
    </widget>
    <widget class="QMenu" name="menuAide">
     <property name="title">
-     <string>Aide</string>
+     <string>Help</string>
     </property>
     <addaction name="actionA_propos"/>
    </widget>
@@ -41,12 +41,12 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionQuitter">
    <property name="text">
-    <string>Quitter</string>
+    <string>Quit</string>
    </property>
   </action>
   <action name="actionA_propos">
    <property name="text">
-    <string>À propos</string>
+    <string>About</string>
    </property>
   </action>
  </widget>
